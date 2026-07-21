@@ -1,1 +1,11 @@
+## Description
 
+This laboratory exercise focuses on working with **structures** in C/C++. The objective is to practice defining structures, reading structured input from the standard input, processing multiple records, and printing the required output based on given conditions.
+
+## Topics Covered
+
+- Structures (struct)
+- Standard Input / Output
+- Loops
+- Conditional Statements
+- Data Processing
