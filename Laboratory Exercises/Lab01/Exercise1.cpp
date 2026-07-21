@@ -8,14 +8,6 @@ The program reads **N** transaction records from the standard input. Each transa
 
 The program prints the identification number and the total amount (payment amount + commission) for every transaction paid with a **credit card**. If no credit card transactions are found, the program prints an appropriate message.
 
-## Topics Covered
-
-- Structures (`struct`)
-- Arrays
-- Standard Input / Output
-- Loops
-- Conditional Statements
-- Data Processing
 
 # Задача 1 – Трансакции со кредитна картичка
 
@@ -27,14 +19,6 @@ The program prints the identification number and the total amount (payment amoun
 
 Потребно е да се испечатат идентификацискиот број и вкупната сума (платена сума + провизија) за сите трансакции кои се извршени со **кредитна картичка**. Доколку нема трансакции платени со кредитна картичка, се печати соодветна порака.
 
-## Теми
-
-- Структури (`struct`)
-- Низи
-- Стандарден влез и излез
-- Циклуси
-- Условни конструкции
-- Обработка на податоци
 */
 
 
