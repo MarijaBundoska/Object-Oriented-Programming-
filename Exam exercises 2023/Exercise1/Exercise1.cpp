@@ -45,7 +45,7 @@ private:
         strcpy(this->url, other.url);
     }
 public:
-    OnlineBook(char *isbn, char *title, char *author, double price=0, char *url, int size=0):Book(isbn, title, author, price){
+    OnlineBook(char *isbn, char *title, char *author, double price=0.0, char *url, int size=0):Book(isbn, title, author, price){
         this->size = size;
         this->url = new char[strlen(url)+1];
         strcpy(this->url, url);
@@ -75,7 +75,7 @@ private:
     bool stock;
     double weight;
 public:
-    PrintBook(char *isbn, char *title, char *author, double price=0, double weight=0, bool stock=false):Book(isbn, title, author, price){
+    PrintBook(char *isbn, char *title, char *author, double price=0.0, double weight=0.0, bool stock=false):Book(isbn, title, author, price){
         this->stock = stock;
         this->weight = weight;
     }
