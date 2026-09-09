@@ -1,6 +1,6 @@
-# Exam exercise - FINKI-Education
+# Exam exercise 1 - FINKI-Education
 
-## English Description
+## Description
 FINKI-Education publishing house issues online and printed books. For each book, information about the ISBN (array of max 20 characters), title (array of max 50 characters), 
   author (array of max 30 characters), and base price in $ (real number) is stored. The base class for describing books is abstract.
 
@@ -14,7 +14,7 @@ Implement the following methods for derived classes:
 - Global function `mostExpensiveBook(Book** books, int n)`: Counts online and printed books, then prints details of the most expensive book.
 
 
-## Испитна задача - FINKI-Education
+## Опис на задача
 Издавачката куќа FINKI-Education издава онлајн и печатени книги. За секоја книга се чуваат податоци за ISBN бројот (низа од најмногу 20 знаци), насловот (низа од најмногу 50 знаци),
 авторот (низа од најмногу 30 знаци) и основната цена изразена во $ (реален број). Класата за опишување на книгите е апстрактна.
 
