@@ -1,6 +1,7 @@
 # Exercise 3 - Student and Demonstrator Management System
 
 ### Problem Description
+
 A class `Kurs` (Course) is defined to store information about:
 * `ime` (array of characters - course name)
 * `krediti` (integer - ECTS credits)
@@ -20,7 +21,10 @@ Create a class `Demonstrator` that inherits from both `Student` and `Predavach` 
 * Demonstrator name, list of courses taught, number of courses
 * `brojChasovi` (integer - weekly lab hours taught)
 
+**(5 points)**
+
 **Member Functions:**
+
 * `getBodovi()`: Returns an integer representing total points.
   * For regular students: Percentage of passing grades (grade > 5). Example: Grades `5, 6, 7` yield `66` points (66.66% truncated to integer).
   * For demonstrators: Base grade points plus lab points calculated as:
@@ -28,19 +32,34 @@ Create a class `Demonstrator` that inherits from both `Student` and `Predavach` 
     Where $C$ is weekly hours (`brojChasovi`) and $N$ is total courses (`brojKursevi`).
   * If a demonstrator teaches 0 courses ($N = 0$), throw a custom exception `NoCourseException`. Handle it appropriately by printing:
     `Demonstratorot so indeks XXXX ne drzi laboratoriski vezbi` (where `XXXX` is the student index).
-* `pecati()`: 
+
+**(15 points)**
+
+* `pecati()`:
   * For regular students: Prints only the student index.
   * For demonstrators: Prints in the format:
     `Indeks: ime (Kurs1 Krediti1 ECTS, Kurs2 Krediti2 ECTS,...)`
 
+**(10 points)**
+
 **Global Functions:**
+
 * `Student& vratiNajdobroRangiran(Student **studenti, int n)`: Returns a reference to the student with the highest points among `n` students. Demonstrators with 0 courses are considered to have 0 points.
+
+**(15 points)**
+
 * `void pecatiDemonstratoriKurs(char* kurs, Student** studenti, int n)`: Prints all demonstrators who lead lab exercises for the specified `kurs`.
+
+**(10 points)**
+
+**Complete Program Functionality**
+
+**(5 points)**
 
 ---
 
-
 ### Опис на задачата
+
 Дадена е класа `Kurs` во која се чуваат информации за:
 * `ime` (низа од знаци)
 * `krediti` (цел број - кредити)
@@ -55,26 +74,37 @@ Create a class `Demonstrator` that inherits from both `Student` and `Predavach` 
 * `kursevi` (низа од објекти од `Kurs`)
 * `brojKursevi` (цел број)
 
-Да се креира класа `Demonstrator` преку повеќекратно наследување од `Student` и `Predavach`, која ги претставува студентите што држат лабораториски вежби. Дополнително чува:
-* `brojChasovi` (цел број - број на часови во неделата кога држи лабораториски вежби)
+Да се креира класа `Demonstrator` преку повеќекратно наследување од `Student` и `Predavach`, која ги претставува студентите што држат лабораториски вежби. Објектите од оваа класа треба да содржат информации за:
+* индекс на студентот
+* оценки на студентот
+* број на оценки
+* име на демонстраторот
+* листа на курсеви
+* број на курсеви чии лабораториски вежби ги држи студентот
+* `brojChasovi` (цел број - број на часови во неделата кога студентот држи лабораториски вежби)
+
+**(5 поени)**
 
 **Методи:**
-* `getBodovi()`: Враќа цел број на бодови за дадениот студент.
-  * За обични студенти: Процент на преодни оценки (оценки > 5). На пример, за оценки `5, 6, 7` враќа `66` бодови (цел дел од 66.66%).
-  * За демонстратори: На бодовите од оценките се додаваат бодови од вежбите по формулата:
+
+* `getBodovi()` - враќа цел број кој го претставува бројот на бодови за даден студент.
+  * Студентите кои не се демонстратори имаат бодови кои го претставуваат процентот на преодни оценки. На пример, студент со оценки `5, 6, 7` ќе има `66` бодови (цел дел од `66.666...`), затоа што во 66% од оценките има оценка поголема од 5.
+  * Кај секој демонстратор на овие бодови од оценките се додаваат бодовите од лабораториските вежби:
     $$\frac{20 \times C}{N}$$
-    Каде $C$ е бројот на часови во неделата, а $N$ е бројот на курсеви.
-  * Доколку демонстраторот не држи ниту еден курс ($N = 0$), се фрла исклучок `NoCourseException`. При фаќање на исклучокот се печати:
-    `Demonstratorot so indeks XXXX ne drzi laboratoriski vezbi` (каде `XXXX` е индексот на демонстраторот).
+    каде $N$ е бројот на курсеви кои ги држи демонстраторот, а $C$ е бројот на часови во неделата кога студентот држи лабораториски вежби.
+  * Во случај кога демонстраторот не држи ниту еден курс ($N = 0$), се фрла исклучокот `NoCourseException`. Справувањето со исклучокот треба да се реализира онаму каде што е потребно и притоа да се испечати соодветната порака:
+    `Demonstratorot so indeks XXXX ne drzi laboratoriski vezbi`
+
+**(15 поени)**
+
 * `pecati()`:
-  * За обични студенти: Го печати само индексот на студентот.
-  * За демонстратори: Печати во форматот:
-    `Indeks: ime (Kurs1 Krediti1 ECTS, Kurs2 Krediti2 ECTS,...)`
+  * За обичен студент се печати само индексот на студентот.
+  * Во случај кога студентот е демонстратор, дополнително се печатат информации за курсевите чии лабораториски вежби ги држи демонстраторот.
 
-**Глобални функции:**
-* `Student& vratiNajdobroRangiran(Student **studenti, int n)`: Враќа референца кон студентот со најмногу бодови. Демонстраторите без курсеви се земаат со 0 бодови.
-* `void pecatiDemonstratoriKurs(char* kurs, Student** studenti, int n)`: Ги печати сите демонстратори кои држат лабораториски вежби за дадениот `kurs`.
+Форматот за печатење е:
 
+```text
+Indeks: ime (Kurs1 Krediti1 ECTS, Kurs2 Krediti2 ECTS,...)
 ---
 
 ## Test Cases
