@@ -16,7 +16,6 @@ For each object of the two derived classes, the following methods should be avai
 
 Implement the function `mostExpensiveBook` with the following signature:
 
-```cpp
 void mostExpensiveBook(Book** books, int n)
 
 ## Опис на задача
@@ -35,7 +34,6 @@ void mostExpensiveBook(Book** books, int n)
 
 Да се имплементира функција `mostExpensiveBook` со потпис:
 
-```cpp
 void mostExpensiveBook(Book** books, int n)
 
 
