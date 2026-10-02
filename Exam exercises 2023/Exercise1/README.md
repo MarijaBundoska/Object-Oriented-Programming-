@@ -1,31 +1,43 @@
 # Exam exercise 1 - FINKI-Education
 
 ## Description
-FINKI-Education publishing house issues online and printed books. For each book, information about the ISBN (array of max 20 characters), title (array of max 50 characters), 
-  author (array of max 30 characters), and base price in $ (real number) is stored. The base class for describing books is abstract.
 
-For each online book, additional data is kept for the download URL (dynamically allocated character array) and size in MB (integer).
-For each printed book, additional data is kept for weight in kg (real number) and whether it is in stock (boolean).
+FINKI-Education publishing house issues online and printed books. For each book, information about the ISBN number (array of max 20 characters), title (array of max 50 characters), author (array of max 30 characters), and base price expressed in $ (real number) is stored. The class for describing books is abstract. **(5 points)**
 
-Implement the following methods for derived classes:
-- `bookPrice()`: Calculates the selling price (Online: +20% base price if size > 20MB; Printed: +15% base price if weight > 0.7kg).
-- Operator `>`: Compares two books by selling price.
-- Operator `<<`: Prints book details.
-- Global function `mostExpensiveBook(Book** books, int n)`: Counts online and printed books, then prints details of the most expensive book.
+For each `online book`, additional data is stored for the URL from which it can be downloaded (dynamically allocated character array) and the size expressed in MB (integer). For each `printed book`, additional data is stored for the weight expressed in kilograms (real number) and whether it is in stock (boolean). **(5 points)**
 
+For each object of the two derived classes, the following methods should be available:
+
+- Method `bookPrice`, for calculating the selling price of the book in the following way: **(10 points)**
+  - For an online book - the price is increased by 20% of the base price if the book is larger than 20MB.
+  - For a printed book - the price is increased by 15% of the base price if the weight of the book is greater than 0.7kg.
+- Overloaded operator `>` for comparing two books of any type according to their price. **(5 points)**
+- Overloaded operator `<<` for printing the book data in the specified format. **(5 points)**
+
+Implement the function `mostExpensiveBook` with the following signature:
+
+```cpp
+void mostExpensiveBook(Book** books, int n)
 
 ## Опис на задача
-Издавачката куќа FINKI-Education издава онлајн и печатени книги. За секоја книга се чуваат податоци за ISBN бројот (низа од најмногу 20 знаци), насловот (низа од најмногу 50 знаци),
-авторот (низа од најмногу 30 знаци) и основната цена изразена во $ (реален број). Класата за опишување на книгите е апстрактна.
 
-За секоја онлајн книга дополнително се чуваат податоци за url од каде може да се симне (динамички резервирана низа од знаци) и големината изразена во MB (цел број).
-За секоја печатена книга дополнително се чуваат податоци за масата изразена во килограми (реален број) и дали ја има на залиха (логичка променлива).
+Издавачката куќа `FINKI-Education` издава онлајн и печатени книги. За секоја книга се чуваат податоци за ISBN бројот (низа од најмногу 20 знаци), насловот (низа од најмногу 50 знаци), авторот (низа од најмногу 30 знаци) и основната цена изразена во $ (реален број). Класата за опишување на книгите е апстрактна **(5 поени)**.
+
+За секоја `онлајн книга` дополнително се чуваат податоци за url од каде може да се симне (динамички резервирана низа од знаци) и големината изразена во MB (цел број). За секоја `печатена книга` дополнително се чуваат податоци за масата изразена во килограми (реален број) и дали ја има на залиха (логичка променлива). **(5 поени)**
 
 За секој објект од двете изведени класи треба да бидат на располагање следниве методи:
-- `bookPrice()`: Пресметување на продажната цена (Онлајн: +20% од основната цена ако е > 20MB; Печатена: +15% од основната цена ако е > 0.7kg).
-- Преоптоварен оператор `>` за споредба на две книги според нивната цена.
-- Преоптоварен оператор `<<` за печатење на податоците за книгите.
-- Глобална функција `mostExpensiveBook(Book** books, int n)` која го печати вкупниот број на онлајн и печатени книги посебно, а потоа ја наоѓа и печати најскапата книга.
+
+- Метод `bookPrice`, за пресметување на продажната цена на книгата на следниот начин: **(10 поени)**
+  - За онлајн книга - цената се зголемува за 20% од основната цена ако книгата е поголема од 20MB.
+  - За печатена книга - цената се зголемува за 15% од основната цена ако масата на книгата е поголема од 0.7kg.
+- Преоптоварен оператор `>` за споредба на две книги од каков било вид според нивната цена. **(5 поени)**
+- Преоптоварен оператор `<<` за печатење на податоците за книгите во формат. **(5 поени)**
+
+Да се имплементира функција `mostExpensiveBook` со потпис:
+
+```cpp
+void mostExpensiveBook(Book** books, int n)
+
 
 ## Test Cases:
   For example:
