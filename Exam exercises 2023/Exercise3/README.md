@@ -3,33 +3,33 @@
 ### Problem Description
 
 A class `Kurs` (Course) is defined to store information about:
-* `ime` (array of characters - course name)
-* `krediti` (integer - ECTS credits)
+* `name` (array of characters - course name)
+* `credits` (integer - ECTS credits)
 
 A class `Student` is defined to store information about:
 * `indeks` (integer - student ID index)
-* `ocenki` (dynamically allocated array of integers representing grades from 5 to 10)
-* `brojOcenki` (integer - total number of grades)
+* `grades` (dynamically allocated array of integers representing grades from 5 to 10)
+* `numberGrades` (integer - total number of grades)
 
 A class `Predavach` (Lecturer) is defined to store information about:
-* `ime` (dynamically allocated array of characters - lecturer name)
-* `kursevi` (array of `Kurs` objects - list of courses taught)
-* `brojKursevi` (integer - number of courses)
+* `name` (dynamically allocated array of characters - lecturer name)
+* `courses` (array of `Kurs` objects - list of courses taught)
+* `numberCourses` (integer - number of courses)
 
 Create a class `Demonstrator` that inherits from both `Student` and `Predavach` (multiple inheritance) to represent students who lead lab exercises. Objects of this class store:
 * Student index, grades array, number of grades
 * Demonstrator name, list of courses taught, number of courses
-* `brojChasovi` (integer - weekly lab hours taught)
+* `numberLab` (integer - weekly lab hours taught)
 
 **(5 points)**
 
 **Member Functions:**
 
-* `getBodovi()`: Returns an integer representing total points.
+* `getPoints()`: Returns an integer representing total points.
   * For regular students: Percentage of passing grades (grade > 5). Example: Grades `5, 6, 7` yield `66` points (66.66% truncated to integer).
   * For demonstrators: Base grade points plus lab points calculated as:
     $$\frac{20 \times C}{N}$$
-    Where $C$ is weekly hours (`brojChasovi`) and $N$ is total courses (`brojKursevi`).
+    Where $C$ is weekly hours (`numberClasses`) and $N$ is total courses (`numberCOurses`).
   * If a demonstrator teaches 0 courses ($N = 0$), throw a custom exception `NoCourseException`. Handle it appropriately by printing:
     `Demonstratorot so indeks XXXX ne drzi laboratoriski vezbi` (where `XXXX` is the student index).
 
