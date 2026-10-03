@@ -33,15 +33,17 @@ User: username
 - Game: Half Life 2, regular price: $70
 - Game: Warcraft 4, regular price: $40, monthly fee: $10, purchased: 1-2017
 ```
-Method Prototypes
-C++
-void ExistingGame::message();
-bool Game::operator==(const Game &);
-User& User::operator+=(const Game &);
-Game& User::get_game(int);
-double User::total_spent(int);
-const char* User::get_name();
-int User::get_games_number();
+### Method Prototypes
+
+| Class / Module | Method Prototype | Description |
+| :--- | :--- | :--- |
+| **ExistingGame** | `void message()` | Prints the appropriate exception error message to the screen |
+| **Game** | `bool operator==(const Game &)` | Compares two games based on their title/name |
+| **User** | `User& operator+=(const Game &)` | Adds a new game to the user's collection (with exception checking) |
+| **User** | `Game& get_game(int)` | Returns a reference to the game at the specified index in the collection |
+| **User** | `double total_spent(int)` | Calculates the total amount of money spent on all purchased games |
+| **User** | `const char* get_name()` | Returns the username of the user |
+| **User** | `int get_games_number()` | Returns the total number of games in the collection |
 
 
 # Задача 5 - Систем за управување со игри и корисници
@@ -76,16 +78,17 @@ User: username
 - Game: Half Life 2, regular price: $70
 - Game: Warcraft 4, regular price: $40, monthly fee: $10, purchased: 1-2017
 
+### Листа на методи и нивни прототипови
 
-Листа на методи и нивни прототипови
-C++
-void ExistingGame::message();
-bool Game::operator==(const Game &);
-User& User::operator+=(const Game &);
-Game& User::get_game(int);
-double User::total_spent(int);
-const char* User::get_name();
-int User::get_games_number();
+| Класа / Модул | Прототип на метод | Опис |
+| :--- | :--- | :--- |
+| **ExistingGame** | `void message()` | Печати соодветна порака за фрлениот исклучок на екран |
+| **Game** | `bool operator==(const Game &)` | Споредува две игри според нивното име |
+| **User** | `User& operator+=(const Game &)` | Додава нова игра во колекцијата на корисникот (со проверка за исклучок) |
+| **User** | `Game& get_game(int)` | Враќа референца до играта на соодветниот индекс во колекцијата |
+| **User** | `double total_spent(int)` | Ја пресметува вкупната сума потрошена за сите купени игри |
+| **User** | `const char* get_name()` | Го враќа корисничкото име на корисникот |
+| **User** | `int get_games_number()` | Го враќа вкупниот број на игри во колекцијата |
 ```
 
 
