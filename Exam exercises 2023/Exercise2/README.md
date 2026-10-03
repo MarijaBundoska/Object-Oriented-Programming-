@@ -1,34 +1,42 @@
 # Exercise 2 - Drivers Tax & Earnings Management
 
-### Problem Description
-Define an abstract class `Vozac` (Driver) that stores the following information:
-* `ime` (array of max 100 characters - driver's name)
-* `vozrast` (integer - age)
-* `trki` (integer - total number of races)
-* `veteran` (boolean - status indicator)
+## Problem Description
+
+Define an abstract class `Driver` that stores the following information:
+
+- `name` – array of max 100 characters (driver's name)
+- `age` – integer (driver's age)
+- `races` – integer (total number of races)
+- `isVeteran` – boolean (veteran status indicator)
 
 Overload the following operators:
-* **Operator `<<`**: prints the name, age, number of races, and if the driver is a veteran, prints `VETERAN` on a new line.
-* **Operator `==`**: compares two drivers based on their earnings per race.
 
-Derive two classes from `Vozac`: `Avtomobilist` (Car Driver) and `Motociklist` (Motorcyclist).
+- **Operator `<<`** – prints the name, age, number of races, and if the driver is a veteran, prints `VETERAN` on a new line.
+- **Operator `==`** – compares two drivers based on their earnings per race.
 
-Additional attribute for `Avtomobilist`:
-* `cena` (double - price of the car)
+Derive two classes from `Driver`: `CarDriver` and `Motorcyclist`.
 
-Additional attribute for `Motociklist`:
-* `mokjnost` (integer - engine power)
+### Additional Attribute for `CarDriver`
 
-**Earnings per race calculation:**
-* For `Avtomobilist`: `CAR_PRICE / 5`
-* For `Motociklist`: `ENGINE_POWER * 20`
+- `carPrice` – double (price of the car)
 
-**Tax calculation:**
-* For `Avtomobilist`: If the number of races is greater than 10, the tax rate is 15% of earnings; otherwise, it is 10%.
-* For `Motociklist`: If the driver is a veteran, the tax rate is 25% of earnings; otherwise, it is 20%.
+### Additional Attribute for `Motorcyclist`
 
-**Global Function:**
-Implement a global function `soIstaZarabotuvachka(Vozac **vozaci, int n, Vozac *v)` that takes an array of pointers to `Vozac`, the total number `n`, and a pointer to a driver `v`. The function returns the total count of drivers from the array who have identical earnings to driver `v`.
+- `enginePower` – integer (engine power)
+
+### Earnings per Race Calculation
+
+- For `CarDriver`: `carPrice / 5`
+- For `Motorcyclist`: `enginePower * 20`
+
+### Tax Calculation
+
+- For `CarDriver`: If the number of races is greater than 10, the tax rate is 15% of earnings; otherwise, it is 10%.
+- For `Motorcyclist`: If the driver is a veteran, the tax rate is 25% of earnings; otherwise, it is 20%.
+
+### Global Function
+
+Implement a global function `countSameEarnings(Driver **drivers, int n, Driver *targetDriver)` that takes an array of pointers to `Driver`, the total number of drivers `n`, and a pointer to a driver `targetDriver`. The function returns the number of drivers from the array who have the same earnings per race as the given driver.
 
 ---
 
@@ -60,8 +68,7 @@ Implement a global function `soIstaZarabotuvachka(Vozac **vozaci, int n, Vozac *
 * За `Motociklist`: Ако возачот е ветеран, данокот е 25% од заработувачката, инаку е 20%.
 
 **Глобална функција:**
-Да се напише надворешна функција `soIstaZarabotuvachka(Vozac **vozaci, int n, Vozac *v)` која прима низа од покажувачи кон `Vozac`, нивниот број `n` и покажувач кон конкретен возач `v`. Функцијата го враќа бројот на возачи од низата кои имаат иста заработувачка со возачот `v`.
-
+Да се напише надворешна функција `countSameEarnings(Driver **drivers, int n, Driver *targetDriver)` која како аргументи прима низа од покажувачи кон објекти од класата `Driver`, нивниот број `n`, како и покажувач кон објект од класата `Driver`. Функцијата како резултат го враќа бројот на возачи кои имаат иста заработувачка по трка со проследениот возач.
 ---
 
 ## Test Cases
