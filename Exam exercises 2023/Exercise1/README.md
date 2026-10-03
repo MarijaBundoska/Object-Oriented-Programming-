@@ -17,6 +17,10 @@ For each object of the two derived classes, the following methods should be avai
 Implement the function `mostExpensiveBook` with the following signature:
 
 void mostExpensiveBook(Book** books, int n)
+which prints the total number of online and printed books in the given array separately. **(5 points)** Then, the most expensive book is found and printed. **(5 points)**
+
+Provide all necessary functions for the proper functioning of the program. **(5 points)**
+
 
 ## Опис на задача
 
@@ -35,6 +39,9 @@ void mostExpensiveBook(Book** books, int n)
 Да се имплементира функција `mostExpensiveBook` со потпис:
 
 void mostExpensiveBook(Book** books, int n)
+
+во која се печати вкупниот број на онлајн, односно, печатени книги во проследената низа посебно.  **(5 поени)**  Потоа се наоѓа и печати најскапата книга.  **((5 поени)**
+Да се обезбедат сите потребни функции за правилно функционирање на програмата.  **(5 поени)**
 
 
 ## Test Cases:
