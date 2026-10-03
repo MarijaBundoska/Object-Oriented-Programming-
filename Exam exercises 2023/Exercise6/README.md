@@ -77,6 +77,7 @@ User: username
 - Game: PUBG, regular price: $70, bought on sale
 - Game: Half Life 2, regular price: $70
 - Game: Warcraft 4, regular price: $40, monthly fee: $10, purchased: 1-2017
+```
 
 ### Листа на методи и нивни прототипови
 
@@ -89,7 +90,7 @@ User: username
 | **User** | `double total_spent(int)` | Ја пресметува вкупната сума потрошена за сите купени игри |
 | **User** | `const char* get_name()` | Го враќа корисничкото име на корисникот |
 | **User** | `int get_games_number()` | Го враќа вкупниот број на игри во колекцијата |
-```
+
 
 
 ## Test Cases
