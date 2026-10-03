@@ -1,4 +1,4 @@
-# Exercise 5 - Game and User Management System
+# Exercise 6 - Game and User Management System
 
 ## Problem Description
 
