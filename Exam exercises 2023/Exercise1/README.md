@@ -83,46 +83,6 @@ The most expensive book is:
 
 ### Test Case 2
 **Input:**
-```text
-4
-3
-1
-0-312-31677-1
-The Moscow Vector
-Robert Ludlum
-7
-www.finki-education/olinebooks/book1.pdf
-1
-2
-007-6092006565
-Thinking in C++
-Bruce Eckel
-52
-1.2
-1
-1
-978-0672326974
-C++ Primer Plus
-Stephen Prata
-20
-www.finki-education/olinebooks/book2.pdf
-30
-```
-
-**Expected Output:**
-
-```text
-
-====== Testing method mostExpensiveBook() ======
-FINKI-Education
-Total number of online books: 2
-Total number of print books: 1
-The most expensive book is:
-007-6092006565: Thinking in C++, Bruce Eckel 59.8
-```
-
-### Test Case 3
-**Input:**
 
 ```text
 	
@@ -155,7 +115,7 @@ OPERATOR =
 111-0672326974: C++ Primer Plus, Stephen Prata 24
 ```
 
-### Test Case 4
+### Test Case 3
 **Input:**
 
 ```text	
@@ -192,7 +152,7 @@ Rezultat od sporedbata e:
 007-6092006565: Thinking in C++, Bruce Eckel 59.8
 ```
 
-### Test Case 5
+### Test Case 4
 **Input:**
 ```text
 1
