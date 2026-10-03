@@ -121,54 +121,6 @@ VETERAN
 **Input:**
 ```text
 5
-1
-Hamilton 30 95 0 55000
-Vetel 26 88 1 800
-Barrichello 38 198 0 810
-Rossi 32 130 1 800
-Lorenzo 24 45 0 900
-VozacX 38 198 1 800
-```
-**Expected output:**
-
-```text
-=== DANOK ===
-Hamilton
-30
-95
-1650
-Vetel
-26
-88
-VETERAN
-4000
-Barrichello
-38
-198
-3240
-Rossi
-32
-130
-VETERAN
-4000
-Lorenzo
-24
-45
-3600
-=== VOZAC X ===
-VozacX
-38
-198
-VETERAN
-=== SO ISTA ZARABOTUVACKA KAKO VOZAC X ===
-2
-```
-
-### Test Case 3
-
-**Input:**
-```text
-5
 4
 Hamilton 30 95 0 55000
 Vetel 26 88 1 8000
@@ -214,7 +166,7 @@ VETERAN
 
 ```
 
-### Test Case 4
+### Test Case 3
 
 **Input:**
 ```text
