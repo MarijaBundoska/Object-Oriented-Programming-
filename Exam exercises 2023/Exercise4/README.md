@@ -3,14 +3,14 @@
 ### Problem Description
 
 Create an abstract class `Pizza` used to represent pizzas. **(5 points)** For each pizza, store the following information:
-* `ime` (character array with a maximum of 20 characters - pizza name)
-* `sostojki` (character array with a maximum of 100 characters - pizza ingredients)
-* `osnovnaCena` (floating-point number - base price)
+* `name` (character array with a maximum of 20 characters - pizza name)
+* `ingredients` (character array with a maximum of 100 characters - pizza ingredients)
+* `basePrice` (floating-point number - base price)
 
 Derive the classes `FlatPizza` and `FoldedPizza` from the base class `Pizza` to represent flat and folded pizzas, respectively. **(5 points)**
 
 For each flat pizza, additionally store:
-* `golemina` (enum - one of three possible sizes: `SMALL`, `LARGE`, `FAMILY`)
+* `size` (enum - one of three possible sizes: `SMALL`, `LARGE`, `FAMILY`)
 
 For each folded pizza, additionally store:
 * information indicating whether the dough is made from white flour (`boolean`).
