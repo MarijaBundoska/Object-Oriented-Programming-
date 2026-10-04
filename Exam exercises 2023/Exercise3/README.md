@@ -2,11 +2,11 @@
 
 ## Problem Description
 
-A class `Kurs` is given, which stores information about the course name (an array of characters) and the number of credits (an integer).
+A class `Course` is given, which stores information about the course name (an array of characters) and the number of credits (an integer).
 
 A class `Student` is given, which contains information about: the student's index (an integer), an array of the student's grades (a dynamically allocated array of grades represented by numbers from 5 to 10), and the number of grades.
 
-A class `Predavach` is given, which contains information about: the lecturer's name (a dynamically allocated array of characters), a list of courses taught by the lecturer (an array of objects of the class `Kurs`), and the number of courses (an integer).
+A class `Lecturer` is given, which contains information about: the lecturer's name (a dynamically allocated array of characters), a list of courses taught by the lecturer (an array of objects of the class `Kurs`), and the number of courses (an integer).
 
 Create a class `Demonstrator`, which represents students who teach laboratory exercises for some courses. The objects of this class should contain information about: the student's index, the student's grades, the number of grades, the demonstrator's name, the list of courses, the number of courses whose laboratory exercises the student teaches, and the number of hours per week during which the student teaches laboratory exercises (an integer).
 
@@ -16,11 +16,11 @@ Create a class `Demonstrator`, which represents students who teach laboratory ex
 
 For each student, the following functions should be provided:
 
-- `getBodovi()` – returns an integer representing the number of points for a given student. Students who are not demonstrators have points representing the percentage of passing grades of the student. (For example, a student with grades: `5 6 7` will have `66` points (the integer part of `66.666...`) because 66% of the grades are greater than 5). For each demonstrator, the points obtained from the grades are increased by the points from the laboratory exercises: `(20 * C) / N`, where `N` is the number of courses taught by the demonstrator, and `C` is the number of hours per week during which the student teaches laboratory exercises. If a demonstrator does not teach any courses, the `NoCourseException` exception is thrown. The exception should be handled where necessary, and an appropriate error message should be printed: `"Demonstratorot so indeks XXXX ne drzi laboratoriski vezbi"`, where `XXXX` is the demonstrator's index.
+- `getPoints()` – returns an integer representing the number of points for a given student. Students who are not demonstrators have points representing the percentage of passing grades of the student. (For example, a student with grades: `5 6 7` will have `66` points (the integer part of `66.666...`) because 66% of the grades are greater than 5). For each demonstrator, the points obtained from the grades are increased by the points from the laboratory exercises: `(20 * C) / N`, where `N` is the number of courses taught by the demonstrator, and `C` is the number of hours per week during which the student teaches laboratory exercises. If a demonstrator does not teach any courses, the `NoCourseException` exception is thrown. The exception should be handled where necessary, and an appropriate error message should be printed: `"Demonstratorot so indeks XXXX ne drzi laboratoriski vezbi"`, where `XXXX` is the demonstrator's index.
 
 **(15 points)**
 
-- `pecati()` – prints only the student's index if the student is not a demonstrator, and in the case when the student is a demonstrator, information about the courses whose laboratory exercises the demonstrator teaches is also printed.
+- `print()` – prints only the student's index if the student is not a demonstrator, and in the case when the student is a demonstrator, information about the courses whose laboratory exercises the demonstrator teaches is also printed.
 
 **(10 points)**
 
