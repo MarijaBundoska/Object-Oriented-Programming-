@@ -1,111 +1,86 @@
 # Exercise 3 - Student and Demonstrator Management System
 
-### Problem Description
+## Problem Description
 
-A class `Kurs` (Course) is defined to store information about:
-* `name` (array of characters - course name)
-* `credits` (integer - ECTS credits)
+A class `Kurs` is given, which stores information about the course name (an array of characters) and the number of credits (an integer).
 
-A class `Student` is defined to store information about:
-* `indeks` (integer - student ID index)
-* `grades` (dynamically allocated array of integers representing grades from 5 to 10)
-* `numberGrades` (integer - total number of grades)
+A class `Student` is given, which contains information about: the student's index (an integer), an array of the student's grades (a dynamically allocated array of grades represented by numbers from 5 to 10), and the number of grades.
 
-A class `Predavach` (Lecturer) is defined to store information about:
-* `name` (dynamically allocated array of characters - lecturer name)
-* `courses` (array of `Kurs` objects - list of courses taught)
-* `numberCourses` (integer - number of courses)
+A class `Predavach` is given, which contains information about: the lecturer's name (a dynamically allocated array of characters), a list of courses taught by the lecturer (an array of objects of the class `Kurs`), and the number of courses (an integer).
 
-Create a class `Demonstrator` that inherits from both `Student` and `Predavach` (multiple inheritance) to represent students who lead lab exercises. Objects of this class store:
-* Student index, grades array, number of grades
-* Demonstrator name, list of courses taught, number of courses
-* `numberLab` (integer - weekly lab hours taught)
+Create a class `Demonstrator`, which represents students who teach laboratory exercises for some courses. The objects of this class should contain information about: the student's index, the student's grades, the number of grades, the demonstrator's name, the list of courses, the number of courses whose laboratory exercises the student teaches, and the number of hours per week during which the student teaches laboratory exercises (an integer).
 
 **(5 points)**
 
-**Member Functions:**
+## Functions
 
-* `getPoints()`: Returns an integer representing total points.
-  * For regular students: Percentage of passing grades (grade > 5). Example: Grades `5, 6, 7` yield `66` points (66.66% truncated to integer).
-  * For demonstrators: Base grade points plus lab points calculated as:
-    $$\frac{20 \times C}{N}$$
-    Where $C$ is weekly hours (`numberClasses`) and $N$ is total courses (`numberCOurses`).
-  * If a demonstrator teaches 0 courses ($N = 0$), throw a custom exception `NoCourseException`. Handle it appropriately by printing:
-    `Demonstratorot so indeks XXXX ne drzi laboratoriski vezbi` (where `XXXX` is the student index).
+For each student, the following functions should be provided:
+
+- `getBodovi()` – returns an integer representing the number of points for a given student. Students who are not demonstrators have points representing the percentage of passing grades of the student. (For example, a student with grades: `5 6 7` will have `66` points (the integer part of `66.666...`) because 66% of the grades are greater than 5). For each demonstrator, the points obtained from the grades are increased by the points from the laboratory exercises: `(20 * C) / N`, where `N` is the number of courses taught by the demonstrator, and `C` is the number of hours per week during which the student teaches laboratory exercises. If a demonstrator does not teach any courses, the `NoCourseException` exception is thrown. The exception should be handled where necessary, and an appropriate error message should be printed: `"Demonstratorot so indeks XXXX ne drzi laboratoriski vezbi"`, where `XXXX` is the demonstrator's index.
 
 **(15 points)**
 
-* `pecati()`:
-  * For regular students: Prints only the student index.
-  * For demonstrators: Prints in the format:
-    `Indeks: ime (Kurs1 Krediti1 ECTS, Kurs2 Krediti2 ECTS,...)`
+- `pecati()` – prints only the student's index if the student is not a demonstrator, and in the case when the student is a demonstrator, information about the courses whose laboratory exercises the demonstrator teaches is also printed.
 
 **(10 points)**
 
-**Global Functions:**
+The printing format is:
 
-* `Student& vratiNajdobroRangiran(Student **studenti, int n)`: Returns a reference to the student with the highest points among `n` students. Demonstrators with 0 courses are considered to have 0 points.
+```text
+Indeks: ime (Kurs1 Krediti1 ECTS, Kurs2 Krediti2 ECTS,...)
+```
+
+## Global Functions
+
+The following global functions should be implemented:
+
+- `Student& vratiNajdobroRangiran(Student ** studenti, int n )` – returns a reference to the student who has the highest number of points from the list of the given `n` students (`studenti`). Note that demonstrators who do not teach laboratory exercises are considered to have 0 points. Note also that in the examples there is always exactly one student who has the highest number of points.
 
 **(15 points)**
 
-* `void pecatiDemonstratoriKurs(char* kurs, Student** studenti, int n)`: Prints all demonstrators who lead lab exercises for the specified `kurs`.
+- `void pecatiDemonstratoriKurs (char* kurs, Student** studenti, int n)` – from a given list of students, prints only those who teach laboratory exercises for the course `kurs`.
 
 **(10 points)**
 
-**Complete Program Functionality**
+Complete functionality of the program.
 
 **(5 points)**
+
+Note that the already existing classes `Kurs`, `Student`, and `Predavach` can be supplemented and modified. Refer to the given classes. In addition to the constructors, other functions are also provided in them which can be used.
 
 ---
 
-### Опис на задачата
+## Опис на задачата
 
-Дадена е класа `Kurs` во која се чуваат информации за:
-* `ime` (низа од знаци)
-* `krediti` (цел број - кредити)
+Дадена е класа `Kurs` во која се чуваат информации за име на курс (низа од знаци) и број на кредити (цел број).
 
-Дадена е класа `Student` која содржи информации за:
-* `indeks` (цел број)
-* `ocenki` (динамички алоцирана низа од оценки од 5 до 10)
-* `brojOcenki` (цел број)
+Дадена е класа `Student` што содржи инфомрации за: индекс на студентот (цел број), низа од оценки на студентот (динамички алоцирана низа на оценките кои претставуваат `броеви` од 5 до 10) и број на оценки.
 
-Дадена е класа `Predavach` која содржи информации за:
-* `ime` (динамички алоцирана низа од знаци)
-* `kursevi` (низа од објекти од `Kurs`)
-* `brojKursevi` (цел број)
+Дадена е класа `Predavach` што содржи инфомрации за: име на предавачот (динамички алоцирана низа од знаци), листа од курсеви кои ги предава предавачот (низа од објекти од класата `Kurs`) и број на курсеви (цел број).
 
-Да се креира класа `Demonstrator` преку повеќекратно наследување од `Student` и `Predavach`, која ги претставува студентите што држат лабораториски вежби. Објектите од оваа класа треба да содржат информации за:
-* индекс на студентот
-* оценки на студентот
-* број на оценки
-* име на демонстраторот
-* листа на курсеви
-* број на курсеви чии лабораториски вежби ги држи студентот
-* `brojChasovi` (цел број - број на часови во неделата кога студентот држи лабораториски вежби)
+Да се креира класа `Demonstrator`, со која се претставуваат студентите држат лабораториските вежби на некои курсеви. Објектите од оваа класа треба да содржат инфомрации за: индекс на студентот, оценки на студентот, број на оценки, име на демонстраторот, листа од курсеви, број на курсеви чии лабораторисски вежби ги држи студентот и број на часови во неделата кога студентот држи лабораториски вежби (цел број). **(5 поени)**
 
-**(5 поени)**
+За секој студент да се овозможат следните функции:
 
-**Методи:**
+- `getBodovi()` - која враќа цел број кој го претставува број на бодови за даден студент. Студентите кои не се демонстратори имаат бодови кои го претставуваат процентот на преодни оценки на студентот. (На пример студент со оценки: 5 6 7 ќе има 66 бодови (цел дел од 66.666...) затоа што во 66% од оценките има оценка поголема од 5 ). Кај секој демонстратор на овие бодовите од оценките се додаваат бодовите од лабораториските вежби: (20*C)/N, каде N e бројот на курсеви кои ги држи, C бројот на часови во неделата кога студентот држи лабораториски вежби. Во случај кога некој демонстратор не држи ниту еден курс се фрла исклучокот **NoCourseException**. Справување со исклучокот треба да реализира онаму каде што е потребно и притоа да се испечати соодветна порака за грешка "Demonstratorot so indeks XXXX ne drzi laboratoriski vezbi", каде XXXX е индексот на демонстраторот. **(15 поени)**
 
-* `getBodovi()` - враќа цел број кој го претставува бројот на бодови за даден студент.
-  * Студентите кои не се демонстратори имаат бодови кои го претставуваат процентот на преодни оценки. На пример, студент со оценки `5, 6, 7` ќе има `66` бодови (цел дел од `66.666...`), затоа што во 66% од оценките има оценка поголема од 5.
-  * Кај секој демонстратор на овие бодови од оценките се додаваат бодовите од лабораториските вежби:
-    $$\frac{20 \times C}{N}$$
-    каде $N$ е бројот на курсеви кои ги држи демонстраторот, а $C$ е бројот на часови во неделата кога студентот држи лабораториски вежби.
-  * Во случај кога демонстраторот не држи ниту еден курс ($N = 0$), се фрла исклучокот `NoCourseException`. Справувањето со исклучокот треба да се реализира онаму каде што е потребно и притоа да се испечати соодветната порака:
-    `Demonstratorot so indeks XXXX ne drzi laboratoriski vezbi`
-
-**(15 поени)**
-
-* `pecati()`:
-  * За обичен студент се печати само индексот на студентот.
-  * Во случај кога студентот е демонстратор, дополнително се печатат информации за курсевите чии лабораториски вежби ги држи демонстраторот.
+- `pecati()`- во која се печати само индексот на студентот ако студентот не е демонстратор, а во случај кога студентот е демонстратор во продолжение се печатат информации за курсевите чии лабораториски вежби ги држи демонстраторот. **(10 поени)**
 
 Форматот за печатење е:
 
 ```text
 Indeks: ime (Kurs1 Krediti1 ECTS, Kurs2 Krediti2 ECTS,...)
----
+```
+
+Да се имплементираат следните глобални функции:
+
+- `Student& vratiNajdobroRangiran(Student ** studenti, int n )` што враќа референца кон студентот кој има најмногу бодови од листата на дадените n студенти (studenti). Да забележиме дека оние демонстратори кои не држат лабораториски вежби ќе земеме дека имаат 0 бодови. Да забележиме и дека во примерите секогаш има точно еден студент кој има најголем број на бодови. **(15 поени)**
+
+- `void pecatiDemonstratoriKurs (char* kurs, Student** studenti, int n)` - која од дадена листа на студенти, ќе ги испечати само оние кои држат лабораториски вежби на курсот kurs. **(10 поени)**
+
+Комплетна функционалност на програмата. **(5 поени)**
+
+Да забележиме дека веќе постоечките класи `Kurs`, `Student` и `Predavach` може да се дополнуваат и менуваат. Погледнете ги дадените класи. Во нив покрај конструкторите дадени се и други функциите кои можат да се користат.
 
 ## Test Cases
 
