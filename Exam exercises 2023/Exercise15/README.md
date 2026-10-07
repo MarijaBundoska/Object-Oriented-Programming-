@@ -129,12 +129,12 @@ Kursot XXXXX go polozile:
 Целосната функционалност на имплементираните класи и функции треба да работи правилно. **(5 поени)**
 
 
-# Test Cases
+## Test Cases
 
 
-## Test case 1
+### Test case 1
 
-##  Input:
+###  Input:
 ```text	
 2
 Tanja 4 0
@@ -144,7 +144,7 @@ Vasko do7br4o
 Ana losho
 ```
 
-## Expected output:
+### Expected output:
 ```text
 Greshna opisna ocenka
 Kursot OOP go polozile:
@@ -153,9 +153,9 @@ Vasko --- 9
 
 
 
-##  Test case 2
+###  Test case 2
 
-## Input:
+### Input:
 ```text
 2
 Tanja 4 0
@@ -164,7 +164,7 @@ Vasko 8 1
 Vasko do7br4o
 ```
 
-## Expected output:
+### Expected output:
 ```text
 Greshna opisna ocenka
 Kursot OOP go polozile:
@@ -173,9 +173,9 @@ Vasko --- 9
 
 
 
-## Test case 3
+### Test case 3
 
-## Input:
+### Input:
 ```text
 2
 Tanja 4 0
@@ -184,7 +184,7 @@ Vasko 9 1
 Vasko dobro
 ```
 
-## Expected output:
+### Expected output:
 ```text
 Kursot OOP go polozile:
 Vasko --- 9
@@ -192,9 +192,9 @@ Vasko --- 9
 
 
 
-## Test case 4
+### Test case 4
 
-## Input:
+### Input:
 ```text	
 2
 Tanja 4 1
@@ -203,7 +203,7 @@ Vasko 9 0
 Tanja odlicen
 ```
 
-## Expected output:
+### Expected output:
 ```text
 Kursot OOP go polozile:
 Tanja --- 6
@@ -212,9 +212,9 @@ Vasko --- 9
 
 
 
-## Test case 5
+### Test case 5
 
-## Input:
+### Input:
 ```text
 2
 Tanja 4 0
@@ -222,7 +222,7 @@ Vasko 9 0
 0
 ```
 
-## Expected output:
+### Expected output:
 ```text
 Kursot OOP go polozile:
 Vasko --- 9
@@ -230,9 +230,9 @@ Vasko --- 9
 
 
 
-## Test case 6
+### Test case 6
 
-## Input:
+### Input:
 ```text
 2
 Tanja 4 0
@@ -241,7 +241,7 @@ Vasko 9 1
 Vasko losho
 ```
 
-## Expected output:
+### Expected output:
 ```text
 Kursot OOP go polozile:
 Vasko --- 8
