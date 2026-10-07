@@ -18,6 +18,7 @@ In the classes `StudentKurs` and `StudentKursUsno`, implement the necessary cons
 For all objects of the classes, the following functions should be provided:
 
 - **Overloaded `<<` operator** that prints information about the student attending the course in the following format:
+  
 
 ```text
 Ime --- ocenka
