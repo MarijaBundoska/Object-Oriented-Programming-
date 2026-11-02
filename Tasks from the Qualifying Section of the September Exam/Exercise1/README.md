@@ -35,10 +35,12 @@ For the `OnlineCourse` class, define:
 
 **Input:**
 ```text
+1
 ```
 **Expected output:**
 
 ```text
+CS101 6 1
 ```
 
 
@@ -47,10 +49,13 @@ For the `OnlineCourse` class, define:
 
 **Input:**
 ```text
+2
 ```
 **Expected output:**
 
 ```text
+CS101 6 1
+CS102 4 2
 ```
 
 
@@ -60,10 +65,13 @@ For the `OnlineCourse` class, define:
 
 **Input:**
 ```text
+3
 ```
 **Expected output:**
 
 ```text
+CS101 5 1
+CS102 6 1
 ```
 
 
@@ -73,10 +81,12 @@ For the `OnlineCourse` class, define:
 
 **Input:**
 ```text
+4
 ```
 **Expected output:**
 
 ```text
+9
 ```
 
 
@@ -87,10 +97,18 @@ For the `OnlineCourse` class, define:
 
 **Input:**
 ```text
+5
+3
+CS101 4 2
+CS102 5 1
+CS103 6 2
 ```
 **Expected output:**
 
 ```text
+CS101 4 2
+CS102 5 1
+CS103 6 2
 ```
 
 
@@ -101,10 +119,18 @@ For the `OnlineCourse` class, define:
 
 **Input:**
 ```text
+5
+3
+CS101 6 3
+CS102 7 -1
+CS103 8 2
 ```
 **Expected output:**
 
 ```text
+CS101 6 1
+CS102 7 1
+CS103 8 2
 ```
 
 
@@ -115,10 +141,21 @@ For the `OnlineCourse` class, define:
 
 **Input:**
 ```text
+6
+3
+CS101 4 2
+CS102 5 1
+CS103 6 2
 ```
 **Expected output:**
 
 ```text
+CS101 4 2
+CS102 5 1
+CS103 6 2
+6
+6
+8
 ```
 
 
@@ -128,8 +165,19 @@ For the `OnlineCourse` class, define:
 
 **Input:**
 ```text
+6
+3
+CS101 6 3
+CS102 7 -1
+CS103 8 2
 ```
 **Expected output:**
 
 ```text
+CS101 6 1
+CS102 7 1
+CS103 8 2
+7
+8
+10
 ```
